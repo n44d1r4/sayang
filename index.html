@@ -10,9 +10,11 @@
       padding: 30px;
       background-color: #fff0f5;
     }
+
     .hidden {
       display: none;
     }
+
     .calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
@@ -20,6 +22,7 @@
       max-width: 300px;
       margin: 20px auto;
     }
+
     .calendar button {
       padding: 15px;
       font-size: 16px;
@@ -29,18 +32,22 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     .calendar button:hover {
       background-color: #ffb6c1;
     }
+
     .falling-emoji {
       font-size: 24px;
       position: fixed;
       animation: fall-emoji 3s linear infinite;
     }
+
     @keyframes fall-emoji {
       0% { top: -10%; opacity: 1; }
       100% { top: 100%; opacity: 0; }
     }
+
     #gift {
       margin-top: 20px;
       padding: 10px 20px;
@@ -51,14 +58,17 @@
       cursor: pointer;
       font-size: 18px;
     }
+
     #bigCakeEmoji {
       font-size: 80px;
       margin-top: 20px;
     }
+
     #sweetMessage {
       font-size: 20px;
       margin: 15px 0;
     }
+
     #cakeImage {
       width: 200px;
       margin: 20px auto;
@@ -66,53 +76,58 @@
   </style>
 </head>
 <body>
+  <!-- Step Awal -->
   <div id="step1">
     <h1>Haaay aşkım, bugün senin doğum günün mü?</h1>
     <button onclick="checkYes(true)">Evet</button>
     <button onclick="checkYes(false)">Hayır</button>
   </div>
 
+  <!-- Boongan -->
   <div id="boong" class="hidden">
     <p>Şaka yapıyorsun, bugün senin doğum günün! 😆 Hadi geri dön ve 'Evet' seçeneğini tıkla!</p>
   </div>
 
+  <!-- Kalender Pilihan -->
   <div id="calendarContainer" class="hidden">
     <h2>Ağustos ayında doğum gününü seç 🎉</h2>
     <div class="calendar" id="calendar"></div>
   </div>
 
+  <!-- Kalau salah pilih tanggal -->
   <div id="wrongDate" class="hidden">
-  <p>Neden o tarihi seçiyorsun, senin doğum gününün o gün olmadığını biliyorum aşkım 😜</p>
-  <audio id="wrongSound">
-    <source src="https://raw.githubusercontent.com/n44d1r4/sayang/main/Wrong%20Sound%20Effect%20(Sound%20Effect%20Salah).mp3" type="audio/mpeg">
-  </audio>
-
-    
+    <p>Neden o tarihi seçiyorsun, senin doğum gününün o gün olmadığını biliyorum aşkım 😜</p>
+    <audio id="wrongSound">
+      <source src="https://raw.githubusercontent.com/n44d1r4/sayang/main/Wrong%20Sound%20Effect%20(Sound%20Effect%20Salah).mp3" type="audio/mpeg" />
+    </audio>
   </div>
 
+  <!-- Pesan Ulang Tahun -->
   <div id="birthdayMessage" class="hidden">
     <h2>Doğum Günün Kutlu Olsun!!! 🎂🎈</h2>
-           <img src="https://github.com/n44d1r4/sayang/raw/main/kue.webp" alt="Kue Ulang Tahun">
-        <img src="rojdan.jpg" alt="Foto Kamu" width="200">
-    <div id="sweetMessage">20. yaş günün kutlu olsun, aşkım.
-Artık resmen herkesin 'sweet twenty' dediği yaşa girdin ama bence sen zaten en tatlısısın 🥰
-Hayat yolculuğunda senin yanında olabildiğim için çok minnettarım; seni büyürken izlemek, her zaman yanında olmak, hikayelerini dinlemek, ne olursa olsun sana eşlik edebilmek... Bunlar benim için büyük mutluluk.
+    <img src="https://github.com/n44d1r4/sayang/raw/main/kue.webp" alt="Kue Ulang Tahun">
+    <img src="rojdan.jpg" alt="Foto Kamu" width="200">
 
-Umarım bu yıl, hayallerinin peşinden cesaretle koşabildiğin, süreci huzurla yaşayabildiğin ve seni gerçekten seven insanlardan, ve elbette benden, bol bol sevgi alabildiğin bir yıl olur.
+    <div id="sweetMessage">
+      20. yaş günün kutlu olsun, aşkım.<br>
+      Artık resmen herkesin 'sweet twenty' dediği yaşa girdin ama bence sen zaten en tatlısısın 🥰<br><br>
+      Hayat yolculuğunda senin yanında olabildiğim için çok minnettarım; seni büyürken izlemek, her zaman yanında olmak, hikayelerini dinlemek, ne olursa olsun sana eşlik edebilmek... Bunlar benim için büyük mutluluk.<br><br>
+      Umarım bu yıl, hayallerinin peşinden cesaretle koşabildiğin, süreci huzurla yaşayabildiğin ve seni gerçekten seven insanlardan, ve elbette benden, bol bol sevgi alabildiğin bir yıl olur.<br><br>
+      Uzun ömürlü ol, sağlıklı kal, kendine iyi bak ki benimle birlikte daha uzun bir hayat yaşayabilesin.<br>
+      Seninle gurur duyuyorum. Hep güçlü ol, hep ilerle.<br>
+      Ben her zaman burada olacağım, seni desteklemek için.<br><br>
+      Mutlu yıllar, canım insanım. Seni çok seviyorum. 💙 💖💫
+    </div>
 
-Uzun ömürlü ol, sağlıklı kal, kendine iyi bak ki benimle birlikte daha uzun bir hayat yaşayabilesin.
-Seninle gurur duyuyorum. Hep güçlü ol, hep ilerle.
-Ben her zaman burada olacağım, seni desteklemek için.
-
-Mutlu yıllar, canım insanım. Seni çok seviyorum. 💙 💖💫</div>
     <button id="gift" onclick="startEmojiRain()">Sürpriz için buraya 10 kez tıkla 🎁</button>
-   <audio id="bgMusic" autoplay loop>
-<source src="https://raw.githubusercontent.com/n44d1r4/sayang/main/HAPPY%20BIRTHDAY%20INSTRUMENTAL.mp3" type="audio/mpeg">
-</audio>
 
-
+    <!-- Musik Latar -->
+    <audio id="bgMusic" autoplay loop>
+      <source src="https://raw.githubusercontent.com/n44d1r4/sayang/main/HAPPY%20BIRTHDAY%20INSTRUMENTAL.mp3" type="audio/mpeg" />
+    </audio>
   </div>
 
+  <!-- Script -->
   <script>
     let clickCount = 0;
 
@@ -156,7 +171,11 @@ Mutlu yıllar, canım insanım. Seni çok seviyorum. 💙 💖💫</div>
         music.play();
       } else {
         document.getElementById('wrongDate').classList.remove('hidden');
-        document.getElementById('wrongSound').play();
+        const wrongSound = document.getElementById('wrongSound');
+        if (wrongSound) {
+          wrongSound.currentTime = 0;
+          wrongSound.play().catch(e => console.warn('Gagal play audio:', e));
+        }
       }
     }
 
@@ -172,7 +191,7 @@ Mutlu yıllar, canım insanım. Seni çok seviyorum. 💙 💖💫</div>
     function createFallingEmoji() {
       const emoji = document.createElement('div');
       emoji.className = 'falling-emoji';
-      emoji.textContent = ['🎉','🎁','🎂','🎊','🎈'][Math.floor(Math.random()*5)];
+      emoji.textContent = ['🎉','🎁','🎂','🎊','🎈'][Math.floor(Math.random() * 5)];
       emoji.style.left = Math.random() * 100 + 'vw';
       emoji.style.top = '-10%';
       emoji.style.position = 'fixed';
@@ -185,6 +204,3 @@ Mutlu yıllar, canım insanım. Seni çok seviyorum. 💙 💖💫</div>
 </body>
 </html>
 
-  </script>
-</body>
-</html>
