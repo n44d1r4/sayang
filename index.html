@@ -92,9 +92,11 @@
         <img src="rojdan.jpg" alt="Foto Kamu" width="200">
     <div id="sweetMessage">Semoga harimu penuh dengan cinta, tawa, dan kejutan indah 💖💫</div>
     <button id="gift" onclick="startEmojiRain()">Sürpriz için buraya 10 kez tıkla 🎁</button>
-    <audio id="bgMusic" autoplay loop>
-      <source src="https://www.bensound.com/bensound-music/bensound-birthday.mp3" type="audio/mpeg">
-    </audio>
+   <audio id="bgMusic" autoplay loop>
+  <source src="https://docs.google.com/uc?export=download&id=1OCUS5xBD2cXD6woGmEI0XxgEfL_Y_cmm" type="audio/mpeg">
+</audio>
+
+
   </div>
 
   <script>
@@ -132,9 +134,12 @@
     function handleDateClick(date) {
       document.getElementById('wrongDate').classList.add('hidden');
       document.getElementById('birthdayMessage').classList.add('hidden');
+
       if (date === 4) {
         document.getElementById('calendarContainer').classList.add('hidden');
         document.getElementById('birthdayMessage').classList.remove('hidden');
+        const music = document.getElementById('bgMusic');
+        music.play();
       } else {
         document.getElementById('wrongDate').classList.remove('hidden');
         document.getElementById('wrongSound').play();
@@ -162,6 +167,10 @@
 
       setTimeout(() => emoji.remove(), 3000);
     }
+  </script>
+</body>
+</html>
+
   </script>
 </body>
 </html>
